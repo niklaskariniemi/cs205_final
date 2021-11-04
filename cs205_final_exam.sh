@@ -9,3 +9,8 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
+print("==== Summary of Pokemon.dat ====")
+awk END{print NR}' pokemon.dat
+awk -F',' '{sum+=$5;}END{print (sum/NR);}' pokemon.dat
+awk -F',' '{sum+=$6;}END{print (sum/NR);}' pokemon.dat
+print("==== End of Summary ====")
